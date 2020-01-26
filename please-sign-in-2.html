@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>UnserHaus | Please sign in</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover"> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="widget_base_height" content="113">
+  <meta name="widget_margin" content="2">
+  <meta name="widget_min_cols" content="13">
+  
+  <link rel="apple-touch-icon" href="img/u.png">
+  <link rel="icon" type="image/png" href="img/u.png">
+  <meta name="apple-mobile-web-app-title" content="UnserHaus App">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="gridster_disable" content="1">
+  <meta name="longpoll" content="1">
+  <meta name="debug" content="0">
+
+
+
+
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/dashboard.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!-- <script src="js/ie-emulation-modes-warning.js"></script> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<!-- <script type="text/javascript">
+  (function(document,navigator,standalone) {
+      // prevents links from apps from oppening in mobile safari
+      // this javascript must be the first script in your <head>
+      if ((standalone in navigator) && navigator[standalone]) {
+          var curnode, location=document.location, stop=/^(a|html)$/i;
+          document.addEventListener('click', function(e) {
+              curnode=e.target;
+              while (!(stop).test(curnode.nodeName)) {
+                  curnode=curnode.parentNode;
+              }
+              // Condidions to do this only on links to your own app
+              // if you want all links, use if('href' in curnode) instead.
+              if('href' in curnode && ( curnode.href.indexOf('http') || ~curnode.href.indexOf(location.host) ) ) {
+                  e.preventDefault();
+                  location.href = curnode.href;
+              }
+          },false);
+      }
+  })(document,window.navigator,'standalone'); -->
+</script>
+
+    </head>
+    
+    <!--<body>-->
+      <body onload="getEventDetailsOnSignInPage2Load();populatePleaseSignIn2Page();checkTheBox()">
+      <div class="container">
+ <div class="header clearfix">
+            
+      <nav class="mainNav">
+        
+                <a href="#" id="trigger" class="">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <ul class="menu">
+                     <li>  <div class="logo">  <img src="img/unserhaus-logo.svg" alt=""></a></div></li>
+                 <!--  <li><a href="showroom.html">Admin Login</a></li>
+                   
+                    <li><a href="user-login.html">Event</a></li>
+                    <li><a href="shworoom.html">Shworoom</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="#">Post Consultation</a></li>-->
+                    <!-- <li><a href="user-login.html">Edit Event</a></li> -->
+                    <li><a href="user-login-attendee.html">Attendees List</a></li>
+                    
+                </ul>
+            </nav></div>
+        <div class="side-bar col-xs-3 col-md-3">    
+      <div class="logo"> <a href="index.html"> <img src="img/unserhaus-logo-within.svg" alt=""></a></div> 
+      <div class="side-bar-text">
+            Creating culture, defining excellence.
+      </div>
+        <div class="link-text">
+        <p><a id="plsdemo1">Demonstration</a></p>
+        <p><a id="plsdemo2">Demonstration1</a></p>
+        <p><a id="plsdemo3">23/09/2019</a></p>
+         <p><a id="plsdemo4">Experience center Bosch</a></p>
+      </div>
+     </div>
+     <div class="content-bar col-xs-9 col-md-9">
+
+      <h2 class="mgr-top-50">Please sign in  </h2>
+      <form class="clearfix clear">
+        <div class="form-group">
+    <label for="exampleInputPassword1">Why did you attend this event? </label>
+     <select class="form-control" id="whyAttend">
+  <!-- <option>To learn more about my appliances</option>
+  <option>For inspiration and information</option>
+  <option>Considering to purchase new appliance </option>
+   -->
+  
+</select>
+  </div>
+  
+  <div class="row clearfix checkboxs form-group" id="mainDivForInterestedAppliances">
+        <div class="col-xs-12"><label>Appliances you are interested in? </label></div>
+              <!-- <div class=" col-xs-6">
+                <label>
+                  <input type="checkbox" value="Refrigerator" name="checkbox3">
+                Refrigerator 
+                </label>
+              </div>
+              <div class="col-xs-6">
+                <label>
+                  <input type="checkbox" value="Washing Machine" name="checkbox3">
+                  Washing Machine
+                </label>
+              </div>
+              <div class=" col-xs-6">
+                <label>
+                  <input type="checkbox" value="Freezer" name="checkbox3">
+                  Freezer
+                </label>
+              </div>
+            <div class=" col-xs-6">
+              <label>
+                <input type="checkbox" value="Dryer" name="checkbox3">
+              Dryer
+              </label>
+            </div>
+            <div class=" col-xs-6">
+              <label>
+                <input type="checkbox" value="Cooktop" name="checkbox3">
+              Cooktop
+              </label>
+            </div>
+            <div class=" col-xs-6">
+              <label>
+                <input type="checkbox" value="Dishwasher" name="checkbox3">
+              Dishwasher 
+              </label>
+            </div>
+            <div class=" col-xs-6">
+              <label>
+                <input type="checkbox" value="Oven" name="checkbox3">
+              Oven
+              </label>
+            </div>
+            <div class=" col-xs-6">
+              <label>
+                <input type="checkbox" value="Indoor cleaning" name="checkbox3">
+              Indoor cleaning 
+              </label>
+            </div>
+            <div class=" col-xs-6">
+              <label>
+                <input type="checkbox" value="Food preparation" name="checkbox3">
+              Food preparation
+              </label>
+            </div>
+          <div class=" col-xs-6">
+            <label>
+              <input type="checkbox" value="Others" name="checkbox3">
+            Others
+            </label>
+          </div> -->
+
+</div>
+<div class=" form-group checkbox">
+  <label>
+    <input type="checkbox" id="checkedBox" value="Yes" name="checkbox4">
+  I acknowledge that photographs and footages may be taken during this event and will be used for marketing purposes. 
+  </label>
+</div>
+<div class=" checkbox form-group">
+  <label>
+    <input type="checkbox" value="Yes" name="checkbox5">
+I consent to BSH Home Appliances Ltd (BSH) using and disclosing the personal information that I have provided for marketing purposes, events, market analysis and to send direct marketing. This information will otherwise be handled in the accordance with BSH’s <a href="https://www.unserhaus.co.nz/privacy-policy/"target="_blank">Privacy Policy</a> also available by calling 0800 807 723.
+  </label>
+</div>
+ </form>
+ <button type="submit" class="btn btn-primary width-100"  onclick="callModalToSaveTheEventUserData()"><i class="fas fa-arrow-right"></i></button>
+ <!-- <div id="snackbar">Some text some message..</div> -->
+ <div class="brands clearfix">
+<div class="col-xs-4 text-center"> <img src="img/bosch-logo.png"></div>
+<div class="col-xs-4 text-center"><img src="img/gaggenau-logo.png"></div>
+<div class="col-xs-4 text-center"><img src="img/neff-logo.png"></div>
+</div>
+  </div>
+     
+
+   </div>
+      </div>
+      <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Successfully submitted. Thank you.</h2>
+      </div>
+      
+      <div class="modal-footer">
+        <a >
+        <button id="dialogSubmit" type="button" class="btn btn-primary col-xs-12" onclick="submitPleaseSignIn2()"><i class="fas fa-arrow-right"></i></button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModalFail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Please fill all the entries.</h2>
+      </div>
+      
+      <div class="modal-footer">
+        <a >
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Please Fill All-->
+    <div class="modal fade" id="myModalFillAllPleaseSignIn2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title" id="myModalLabelFillAllPleaseSignIn2">Please fill all the entries.</h2>
+          </div>
+          
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div> 
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <!-- <script src="https://gist.github.com/irae/1042167.js"></script> -->
+  <script src="js/main.js"></script>  
+  <script type="text/javascript">$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})</script>
+    </body>
+    
+</html>

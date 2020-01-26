@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>UnserHaus | Attendees List</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover"> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="widget_base_height" content="113">
+  <meta name="widget_margin" content="2">
+  <meta name="widget_min_cols" content="13">
+  
+  <link rel="apple-touch-icon" href="img/u.png">
+  <link rel="icon" type="image/png" href="img/u.png">
+  <meta name="apple-mobile-web-app-title" content="UnserHaus App">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="gridster_disable" content="1">
+  <meta name="longpoll" content="1">
+  <meta name="debug" content="0">
+
+
+
+
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/dashboard.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!-- <script src="js/ie-emulation-modes-warning.js"></script> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<!-- <script type="text/javascript">
+  (function(document,navigator,standalone) {
+      // prevents links from apps from oppening in mobile safari
+      // this javascript must be the first script in your <head>
+      if ((standalone in navigator) && navigator[standalone]) {
+          var curnode, location=document.location, stop=/^(a|html)$/i;
+          document.addEventListener('click', function(e) {
+              curnode=e.target;
+              while (!(stop).test(curnode.nodeName)) {
+                  curnode=curnode.parentNode;
+              }
+              // Condidions to do this only on links to your own app
+              // if you want all links, use if('href' in curnode) instead.
+              if('href' in curnode && ( curnode.href.indexOf('http') || ~curnode.href.indexOf(location.host) ) ) {
+                  e.preventDefault();
+                  location.href = curnode.href;
+              }
+          },false);
+      }
+  })(document,window.navigator,'standalone');
+</script> -->
+
+    </head>
+    
+    <!--<body>-->
+      <body onload="loadEventUsers()">
+      <div class="container">
+             <div class="header clearfix">
+            
+      <nav class="mainNav">
+            <a> <i id="backBtn" onclick="sendBack()" class="fas fa-arrow-left sigin"></i></a>
+                <!-- <a href="#" id="trigger" class="">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <ul class="menu">
+                     <li>  <div class="logo"> <a href="index.html"> <img src="img/unserhaus-logo.svg" alt=""></a></div></li>
+                   <li><a href="showroom.html">Admin Login</a></li>
+                   
+                    <li><a href="user-login.html">Event</a></li>
+                    <li><a href="shworoom.html">Shworoom</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="contact.html">Edit Event</a></li>
+                    <li><a href="attendee-list.html">Attendees List</a></li>
+                    <li><a href="#">Post Consultation</a></li>
+                </ul> -->
+            </nav></div>
+            <h2 class="text-center attendees">Attendees List</h2>
+      <div class="bs-example attendee-list" data-example-id="striped-table">
+    <table class="table table-striped" id="attendeesTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Photography</th>
+          <th>Interested Products</th>
+          <th>Dietary Restrictions</th>
+          <th>Consent</th>
+        </tr>
+      </thead>
+      <tbody id="EventUserTable">
+    
+      </tbody>
+    </table>
+
+  </div>
+  <div class="text-center">
+<button class="btn btn-lg btns-wdt btn-primary btn-block" data-toggle="modal" data-target="#myModalUpload" type="submit" id="uploadEventButton" onclick="setStatusOfEventToStop()"> Upload Data</button>
+</div>
+      </div>
+          <!-- Modal -->
+<div class="modal fade" id="myModalUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Data Uploaded Successfully.</h2>
+      </div>
+      
+      <div class="modal-footer">
+        <button id="dialogSubmitStop" type="button" class="btn btn-primary col-xs-12"><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+      <!-- <script lang="javascript" src="xlsx.full.min.js"></script>
+      <script lang="javascript" src="FileSaver.min.js"></script> -->
+      <!-- <script lang="javascript" src="dist/xlsx.full.min.js"></script> -->
+
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="js/ie10-viewport-bug-workaround.js"></script>
+      <!-- <script src="js/css3-mediaqueries.js"></script> -->
+  <script src="js/main.js"></script>
+  <!-- <script src="https://gist.github.com/irae/1042167.js"></script> -->
+  <!-- <script src="text/javascript">
+    jQuery(document).delegate("a:not(.studylink, .refresh, .highslide, .back)", "click", function(event){
+window.location=this.getAttribute("href");
+  return false;
+    });
+    </script> -->
+    </body>
+    
+</html>

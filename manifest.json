@@ -1,0 +1,8 @@
+{
+	"name" : "UnserHaus Guest Registration",
+	"short_name" : "UnserHaus GR",
+	"description" : "This app will act as a portal for registering the guest for events.",
+	"start_url" : "index.html",
+	"display" : "standalone",
+	"orientation" : "any"
+}
